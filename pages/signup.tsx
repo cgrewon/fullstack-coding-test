@@ -31,7 +31,6 @@ const SignUp = () => {
             setShowLoader(true)
             createUserWithEmailAndPassword(email, pwd)
             .then(authUser => {
-                console.log("Success. The user is created in Firebase")
                 router.push("/");
                 setShowLoader(false)
             })

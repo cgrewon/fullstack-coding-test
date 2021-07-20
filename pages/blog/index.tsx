@@ -45,9 +45,7 @@ const BlogPage = ()=>{
         setIsRemoving(false)
     }
 
-    if (!blogsLoading && blogs) {
-        blogs.docs.map((doc) => console.log(doc.data()));
-    }
+
 
     return <MainLayout>
         <Box w="80%"  h="100vh" pt="100px">

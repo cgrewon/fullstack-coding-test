@@ -19,7 +19,7 @@ const LogIn = () => {
 
   
     const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value);
+      
         let val = e.target.value;
         setEmail(val)
     };
@@ -37,7 +37,7 @@ const LogIn = () => {
         e.preventDefault()
         setShowSpinner(true)
         signInWithEmailAndPassword(email, pwd).then(res=>{
-            console.log('result: ', res)
+    
             setShowSpinner(false)
         }).catch(ex=>{
 
@@ -55,7 +55,6 @@ const LogIn = () => {
             justify="center"
             align="center"
         >
-            {console.log('auth:', authUser, ', loading:', loading)}
             <Flex
                 direction="column"
                 justify="flex-start"

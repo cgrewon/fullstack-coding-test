@@ -10,11 +10,7 @@ const Nav = ()=>{
     const router = useRouter()
     const { signOut } = useAuth();
 
-    const handleSignout = async ()=>{
-        // console.log('sign out now' , signOut)
-        // await signOut()
-        // router.replace('/login')
-    }
+ 
 
     return <Box
         pos="absolute"

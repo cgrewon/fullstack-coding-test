@@ -85,11 +85,9 @@ const CreateBlog = ()=>{
             uploadTask.on('state_changed', 
             (snapShot) => {
     
-                console.log('snapShot: ', snapShot)
             }, (err) => {
                 reject(null)
 
-                console.log('err:', err)
             }, () => {
                 // gets the functions from storage refences the image storage in firebase by the children
                 // gets the download url then sets the image from firebase as the value for the imgUrl key:
