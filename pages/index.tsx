@@ -1,34 +1,39 @@
-import React from "react"
+import React, {useEffect} from "react"
 
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import DynamicText from "components/DynamicText";
 import { Input, Box, Flex } from "@chakra-ui/react"
-
+import { useAuth } from 'context/AuthUserContext';
+import { useRouter } from 'next/router';
+import Nav from "components/nav";
+import MainLayout from "layout/MainLayout";
 
 
 const Home = () => {
-
+  const { authUser, loading } = useAuth();
   const ref = React.useRef(null);
+  const router = useRouter();
+
+  useEffect(() => {
+      if (!loading && !authUser){
+        router.replace('/login')
+      }
+        
+  }, [authUser, loading])
+
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
     let val = e.target.value;
     
-    ref?.current?.changeValue(val)
-       
+    ref?.current?.changeValue(val)      
     
   };
  
 
   return (
-      <Flex
-        minH="100vh"
-        p={"0 0.5rem"}
-        direction="column"
-        justify="center"
-        align="center"        
-      >
+    <MainLayout>
 
         <Head>
           <title>Coding Test</title>
@@ -46,15 +51,15 @@ const Home = () => {
         <DynamicText ref={ref}/>
           
         <Input
-          placeholder="large size"
+          placeholder="Enter random string"
           size="lg"
           onChange={onChange}
           mt={6}
         />
 
         </Flex>
-      </Flex>
-    // </div>
+
+      </MainLayout>
   );
 };
 
