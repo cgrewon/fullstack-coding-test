@@ -9,12 +9,15 @@ import { Input, Box, Flex } from "@chakra-ui/react"
 
 const Home = () => {
 
-  const ref = React.useRef();
+  const ref = React.useRef(null);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
-    let val = e.target.value;    
-    ref?.current?.changeValue(val);    
+    let val = e.target.value;
+    
+    ref?.current?.changeValue(val)
+       
+    
   };
  
 
