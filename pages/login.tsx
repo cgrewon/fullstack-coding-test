@@ -39,6 +39,10 @@ const LogIn = () => {
         signInWithEmailAndPassword(email, pwd).then(res=>{
             console.log('result: ', res)
             setShowSpinner(false)
+        }).catch(ex=>{
+
+            alert(ex.message)
+            setShowSpinner(false)
         })
 
 
