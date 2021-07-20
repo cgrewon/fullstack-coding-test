@@ -69,6 +69,7 @@ const LogIn = () => {
                 />
                 <Input
                     placeholder="Password"
+                    type="password"
                     size="lg"
                     onChange={onChangePwd}
                     value={pwd}
